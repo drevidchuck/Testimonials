@@ -1,0 +1,22 @@
+<?php /** @var $block \V3N0m21\Testimonials\Block\TestimonialList */ ?>
+<h1><?php echo __('Latest Testimonials') ?></h1>
+<ul class="testimonials-testimonial-list">
+    <?php /** @var $testimonial \V3N0m21\Testimonials\Model\Testimonial */ ?>
+    <?php if($block->isAuthorized()) { echo "<a href=\"/testimonials/create\"><h3>Write New Testimonial</h3></a>";} ?>
+
+    <?php foreach ($block->getTestimonials() as $testimonial): ?>
+        <li class="testimonials-testimonial-list-item">
+            <h3 class="testimonials-testimonial-item-title">
+                <a href="/testimonials/<?php echo $testimonial->getId() ?>"><?php echo $testimonial->getTitle() ?></a>
+            </h3>
+
+            <div class="testimonials-testimonial-item-content">
+                <?php echo $testimonial->getContent(); ?>
+            </div>
+
+            <div class="testimonials-testimonial-item-meta">
+                <strong><?php echo __('Created at:') ?></strong> <?php echo $testimonial->getCreationTime() ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>

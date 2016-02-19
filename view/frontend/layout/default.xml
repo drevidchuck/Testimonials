@@ -1,0 +1,10 @@
+<body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="header.links">
+        <block class="Magento\Framework\View\Element\Html\Link" name="testimonials.link" before="-">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="false">Testimonials</argument>
+                <argument name="path" xsi:type="string" translate="false">testimonials</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+</body>

@@ -1,0 +1,31 @@
+<h1> Post a Testimonial: </h1>
+
+<form method="POST" action="<?php echo $this->getUrl('testimonials/create/post'); ?>" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'>
+
+    <fieldset class="fieldset">
+
+        <div class="field name required">
+            <label class="label" for="name"><span><?php echo __('Testimonial title') ?></span></label>
+            <div class="control">
+                <input name="testimonial_title" id="testimonial_title" title="<?php echo __('Testimonial Title') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field note">
+            <label class="label" for="email"><span><?php echo __('Testimonial') ?></span></label>
+            <div class="control">
+                <textarea name="testimonial_content" id="testimonial_content" title="<?php echo __('question') ?>" value="" placeholder="Enter your testimonial here" class="input-text" type="text" data-validate="{required:true}"/> </textarea>
+            </div>
+        </div>
+
+        <input type="hidden" name="customer_id" value="<?php echo $_SESSION['customer_base']['customer_id'] ?>">
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary">
+                    <span><?php echo __('Submit') ?></span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+
+
+</form>

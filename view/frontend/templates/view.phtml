@@ -1,0 +1,15 @@
+<?php
+/** @var $block \V3N0m21\Testimonials\Block\TestimonialView */
+/** @var $testimonial \V3N0m21\Testimonials\Model\Testimonial */
+$testimonial = $block->getTestimonial();
+?>
+<h1 class="testimonials-testimonial-item-title"><?php echo $testimonial->getTitle() ?></h1>
+
+<div class="testimonials-testimonial-item-content">
+    <?php echo $testimonial->getContent(); ?>
+</div>
+
+<div class="blog-post-item-meta">
+    <strong><?php echo __('Created at:') ?></strong> <?php echo $testimonial->getCreationTime() ?>
+    <strong><?php echo __('Created by:') ?></strong> <?php echo $testimonial->getCreatedBy() ?>
+</div>
